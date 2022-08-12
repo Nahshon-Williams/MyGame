@@ -1,0 +1,23 @@
+{
+  "length": 10,
+  "rows": [
+    {
+      "height" : 3,
+      "tiles": [
+        {"type": "blank"},{"type": "blank"},{"type": "blank"},{"type": "blank"},{"type": "blank"},{"type": "blank"},{"type": "blank"},{"type": "blank"},{"type": "blank"},{"type": "blank"}
+      ]
+    },
+    {
+      "height" : 2,
+      "tiles": [
+        {"type": "blank"},{"type": "blank"},{"type": "blank"},{"type": "blank"},{"type": "blank"},{"type": "blank"},{"type": "blank"},{"type": "blank"},{"type": "blank"},{"type": "blank"}
+      ]
+    },
+    {
+      "height" : 1,
+      "tiles": [
+        {"type": "floor"},{"type": "floor"},{"type": "floor"},{"type": "floor"},{"type": "floor"},{"type": "top-right"},{"type": "blank"},{"type": "top-left"},{"type": "floor"},{"type": "floor"}
+      ]
+    }
+  ]
+}
