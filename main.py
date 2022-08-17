@@ -2,6 +2,7 @@ import os
 import sys
 import pygame
 from gamemap import GameMap
+from player import Player
 
 # Initialize pygame instance, which initializes display surface, among other things.
 pygame.init()
@@ -40,6 +41,10 @@ for row in level_01.map_data['rows']:
             map_tile = pygame.Surface((64, 64))
             map_tile.fill(pygame.Color(210, 250, 210))
             display_surface.blit(map_tile, (x, y))
+
+# Create and display player character
+player_01 = Player("player 1")
+display_surface.blit(player_01.image, player_01.position)
 
 pygame.display.update()
 
