@@ -44,9 +44,11 @@ for row in level_01.map_data['rows']:
 
 # Create and display player character
 player_01 = Player("player 1")
-display_surface.blit(player_01.image, player_01.position)
+display_surface.blit(player_01.image, player_01.start)
 
 pygame.display.update()
+
+update_list: list[pygame.Rect] = []
 
 
 # Begin game loop. Run until and unless a Quit Event is triggered or the window is closed.
@@ -56,6 +58,15 @@ while running:
     # Pygame Clock tick to control framerate
     FPSClock.tick(FPS)
     print(f'framerate is currently {FPS} frames per second')
+
+    # Update player position due to gravity
+    update_list.append(player_01.positionRect)
+    display_surface.blit(background, player_01.positionRect, player_01.positionRect)
+    player_01.update()
+    print("player updated")
+    display_surface.blit(player_01.image, player_01.positionRect)
+    update_list.append(player_01.positionRect)
+    pygame.display.update(update_list)
 
     # If quit event is triggered, quit all pygame modules, then set running to 'False' to exit loop.
     for event in pygame.event.get():
@@ -69,7 +80,6 @@ while running:
             pygame.display.quit()
             running = False
             print('window should be quiting now')
-
 
 
 if __name__ == '__main__':
